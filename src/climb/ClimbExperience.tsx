@@ -67,7 +67,7 @@ export function ClimbExperience() {
       window.scrollTo(0, 0)
 
       // Smooth scrolling, driven by GSAP's ticker so Lenis and ScrollTrigger stay in lockstep.
-      const lenis = new Lenis({ autoRaf: false, lerp: 0.09 })
+      const lenis = new Lenis({ autoRaf: false, lerp: 0.09, allowNestedScroll: true })
       lenis.on('scroll', ScrollTrigger.update)
       const raf = (time: number) => lenis.raf(time * 1000)
       gsap.ticker.add(raf)
