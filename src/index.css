@@ -178,7 +178,6 @@ ul {
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behavior: contain;
 }
 
 /* A second sheet peeking out behind the card: layered paper. */
