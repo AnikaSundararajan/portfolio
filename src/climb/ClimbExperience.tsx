@@ -224,7 +224,9 @@ export function ClimbExperience() {
               aria-hidden={i !== panelIndex}
             >
               <div className="panel__card">
-                <Panel panel={panel} index={i} />
+                <div className="panel__scroll">
+                  <Panel panel={panel} index={i} />
+                </div>
               </div>
             </section>
           ))}

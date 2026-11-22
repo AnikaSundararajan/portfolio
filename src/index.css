@@ -149,6 +149,7 @@ ul {
   width: min(520px, 42vw);
   display: flex;
   align-items: center;
+  padding-block: 24px;
   visibility: hidden;
 }
 
@@ -159,6 +160,9 @@ ul {
 
 .panel__card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
   pointer-events: auto;
   width: 100%;
   padding: clamp(20px, 2.4vw, 34px);
@@ -167,6 +171,14 @@ ul {
   box-shadow:
     0 1px 0 var(--paper-edge),
     0 18px 40px -12px rgba(20, 12, 35, 0.45);
+}
+
+/* Scrolls inside the card so the paper sheet behind it isn't clipped. */
+.panel__scroll {
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 /* A second sheet peeking out behind the card: layered paper. */
@@ -564,8 +576,6 @@ ul {
   }
 
   .panel__card {
-    max-height: 100%;
-    overflow-y: auto;
     padding: 18px 18px 20px;
     font-size: 0.93rem;
   }
@@ -683,5 +693,11 @@ ul {
   .static-section {
     padding-top: 56px;
     scroll-margin-top: calc(var(--mobile-nav-h) + 8px);
+  }
+}
+
+@media (max-height: 500px) {
+  .altimeter {
+    display: none;
   }
 }
